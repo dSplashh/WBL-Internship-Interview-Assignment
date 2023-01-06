@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset = "utf-8"/>
+        <meta name = "viewpoint" content = "width=device-width, initial-scales=1"/>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            ul{
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              width: 15vw;
+              background-color: #008080;
+              border: 1px solid #008080;
+              position: fixed;
+              height: 100%;
+              overflow: auto;
+            }
+            li a{
+                display: table;
+                color: #FFF;
+                padding: 8px 16px;
+                text-decoration: none;
+                height: 45px;
+                line-height: 650px;
+                font-size: 120%;
+            }
+            li{
+                text-align: center;
+            } 
+            li a:active{
+                color: #48d1cc;
+            }
+            li a:hover:not(.active){
+                color: #48d1cc;
+            }
+            {% block css %}
+
+            {% endblock %}
+        </style>
+
+        <title> {% block title %}Home{% endblock %} </title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <div class = "navbar-nav">
+                <li><a class = "nav item nav-link" id = "home" href = "/"> Pre Rating Page </a></li>
+                <li><a class = "nav-item nav-link" id = "video" href = "/video"> Video Instructions </a><li>
+                <li><a class = "nav-item nav-link" id = "postRate" href = "/post_rate"> Post Rating </a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class = "container"> {% block content%} {% endblock %}</div>
+        
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+        ></script>
+
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+        ></script>
+
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+        ></script>
+
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+        ></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script src={{ url_for('static', filename='video.js') }} ></script>
+    </body>
+</html>
