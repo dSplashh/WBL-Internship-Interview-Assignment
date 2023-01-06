@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block css %} 
+
+h1 {
+    color: #008080;
+    font-size: 4vw;
+    font-weight: bold;
+    margin-bottom: 10px auto;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    top: 4vh;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0 1em 0 1em;
+    color: #008080;
+    width: 3.40em;
+    height: 3.40em;
+    border: 0.20em solid #008080;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    position: relative;
+    top: 30vh;
+    left: 30vw;
+  }
+  
+input[type="radio"]::before {
+    content: "";
+    width: 2.45em;
+    height: 2.45em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #008080;
+  }
+  
+input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+.rateText {
+    position:relative; top:25vh; left:8vw; margin-left:0px auto; margin-right:0px auto;
+    text-align: center;
+    font-size: 2vw;
+  }
+
+  button {
+    border: none;
+    padding: 8px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #48d1cc;
+    position: relative;
+    top: 350px;
+    left: 310px;
+  }  
+  
+{% endblock %} 
+{% block title %}Home{% endblock %}
+{% block content %} 
+
+<h1> Welcome to Stress <br>  Management Excercise </h1> 
+
+<div class = "rateText"><p> Rate Your Stress Level on a scale of 1 to 10 </p></div>
+
+    <label>
+      <input type="radio" name="radio" value = "1" />
+    </label>
+  
+    <label>
+      <input type="radio" name="radio" value = "2"/>
+    </label>
+
+    <label>
+      <input type="radio" name="radio" value = "3"/>
+    </label>
+    
+    <label>
+      <input type="radio" name="radio" value = "4"/>
+    </label>
+    
+    <label>
+     <input type="radio" name="radio" value = "5"/>
+    </label>
+</form>
+
+{% block button %} <button type="button" onclick = "window.location.href='/video';">Next</button> {% endblock %}
+
+
+{% endblock %}
