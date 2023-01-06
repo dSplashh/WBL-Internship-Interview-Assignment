@@ -1,0 +1,104 @@
+{% extends "base.html" %} 
+{% block title %}Video{% endblock %}
+{% block css %} 
+
+h1 {
+    color: #008080;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    top: 50px;
+}
+
+.myDiv {
+    border: none;
+    background-color: lightblue;    
+    text-align: left;
+    width: 70%; 
+    height: 70px;
+    position: relative;
+    top: 50px;
+    left: 25%;
+  }
+.video-player {
+    max-width: 750px;
+    position: relative;
+    left: 26%;
+    top: 70px;
+    overflow: hidden;
+  }
+  
+  .video {
+    width: 100%;
+  }
+  
+  .player-controls {
+    display: block;
+    position: relative;
+    bottom: -25px;
+    width: 75%;
+    background: #FFF;
+  }
+  
+ 
+  
+  .play-button {
+    width: 55px;
+    height: 55px;
+    border-radius: 250px;
+    background: #008080;
+    color: white;
+    padding: 10px;
+  }
+  
+  .play-button:focus {
+    outline: none;
+  }
+  
+  .time {
+    font-size: 1em;
+    color: #008080;
+    width: 100%;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+
+  }
+  
+
+  
+
+
+{% endblock %}
+{% block content%} 
+
+<h1> Welcome to Stress </h1>
+
+<div class="myDiv">
+    <h2> Deep Breathing Excercise </h2>
+</div>
+    
+<div class = "video-player">
+
+    <video class = "video">
+        <source src={{ url_for('static', filename="DeepBreathing.mp4") }} type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class = "player-controls">
+        <button class = "play-button" title = "Play">►</button>
+    </div>
+
+    <div class = "time">
+      <span class = "current" > 0.00 </span></span>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
